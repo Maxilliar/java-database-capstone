@@ -36,8 +36,6 @@ _As a patient, I want to manage my account, explore available doctors, and handl
 
 
 
-# User Story Template
-
 **Title:**
 _As a doctor, I want to authenticate, manage my profile, set my availability, and review appointment details, so that I can securely administer my practice and prepare for patient consultations._
 
