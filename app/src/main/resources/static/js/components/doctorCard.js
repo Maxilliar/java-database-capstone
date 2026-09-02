@@ -91,7 +91,6 @@ export function createDoctorCard(doctor) {
     actionsDiv.appendChild(removeBtn);
   }
 
-  // === PATIENT (NOT LOGGED-IN) ROLE ACTIONS ===
   else if (role === "patient") {
     // Create a book now button
     const bookNow = document.createElement("button");
