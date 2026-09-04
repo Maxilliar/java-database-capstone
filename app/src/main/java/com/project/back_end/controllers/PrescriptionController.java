@@ -36,7 +36,7 @@ public class PrescriptionController {
         }
 
         if (prescription != null && prescription.getAppointmentId() != null) {
-            appointmentService.updateAppointmentStatus(prescription.getAppointmentId(), 1);
+            appointmentService.changeStatus(prescription.getAppointmentId(), 1);
         }
 
         return prescriptionService.savePrescription(prescription);

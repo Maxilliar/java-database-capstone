@@ -62,11 +62,11 @@ public class TokenService {
     }
 
     public String extractIdentifier(String token) {
-        Claims claims = Jwts.parserBuilder()
-                .setSigningKey(getSigningKey())
+        Claims claims = Jwts.parser()
+                .verifyWith(getSigningKey())
                 .build()
-                .parseClaimsJws(token)
-                .getBody();
+                .parseSignedClaims(token)
+                .getPayload();
         return claims.getSubject();
     }
 
@@ -75,11 +75,11 @@ public class TokenService {
     }
 
     public Long extractDoctorId(String token) {
-        Claims claims = Jwts.parserBuilder()
-                .setSigningKey(getSigningKey())
+        Claims claims = Jwts.parser()
+                .verifyWith(getSigningKey())
                 .build()
-                .parseClaimsJws(token)
-                .getBody();
+                .parseSignedClaims(token)
+                .getPayload();
         Object doctorId = claims.get("id");
         if (doctorId instanceof Number) {
             return ((Number) doctorId).longValue();
